@@ -5,11 +5,11 @@ import "../assets/css/weather-icons.min.css";
 
 function WeatherCard({ weatherData }) {
   const { city, weather, country, temp } = weatherData;
-  const celcius = Math.round(temp);
+  const celsius = Math.round(temp);
 
   return (
     <div className="WeatherCard">
-      <h1 className="WeatherCard-degrees">{celcius}°</h1>
+      <h1 className="WeatherCard-degrees">{celsius}°</h1>
       <div className="WeatherCard-icon-container">
         <i className={`wi wi-owm-${weather[0].id} WeatherCard-icon`} />
         <p>{weather[0].main}</p>

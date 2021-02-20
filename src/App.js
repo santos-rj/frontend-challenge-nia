@@ -22,31 +22,6 @@ function App() {
 
   function callWeatherData(city) {
     const url = `http://localhost:3001/weather?q=${city}`;
-    console.log("rodou");
-
-    /*
-    api
-      .get(`weather?q=${city}`)
-      .then(handleErrors)
-      .then((resp) => resp.json())
-      .then((data) => {
-        const weatherObj = {
-          weather: data.weather,
-          city: data.name,
-          country: data.sys.country,
-          temp: data.main.temp,
-        };
-        this.setState({
-          weatherData: weatherObj,
-          searchDone: true,
-          errorMessage: "",
-        });
-      })
-      .catch((error) => {
-        // If an error is catch, it's sent to SearchBar as props
-        this.setState({ errorMessage: error.message });
-      });
-    */
 
     fetch(url)
       .then(handleErrors)
@@ -68,7 +43,6 @@ function App() {
         });
       })
       .catch((error) => {
-        // If an error is catch, it's sent to SearchBar as props
         setState((prevState) => {
           return { ...prevState, errorMessage: error.message };
         });
