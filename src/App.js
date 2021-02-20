@@ -21,7 +21,7 @@ function App() {
   });
 
   function callWeatherData(city) {
-    const url = process.env.URL_BACKEND+`/weather?q=${city}`;
+    const url = `${process.env.URL_BACKEND}/weather?q=${city}`;
 
     fetch(url)
       .then(handleErrors)
