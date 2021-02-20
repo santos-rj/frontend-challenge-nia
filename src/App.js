@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, {
+  useState
+} from "react";
 
 import SearchBar from "./components/SearchBar";
 import WeatherCard from "./components/WeatherCard";
@@ -21,7 +23,7 @@ function App() {
   });
 
   function callWeatherData(city) {
-    const url = `${process.env.URL_BACKEND}/weather?q=${city}`;
+    const url = `${process.env.REACT_APP_URL_BACKEND}/weather?q=${city}`;
 
     fetch(url)
       .then(handleErrors)
@@ -44,7 +46,10 @@ function App() {
       })
       .catch((error) => {
         setState((prevState) => {
-          return { ...prevState, errorMessage: error.message };
+          return {
+            ...prevState,
+            errorMessage: error.message
+          };
         });
       });
 
@@ -56,14 +61,28 @@ function App() {
     }
   }
 
-  const { searchDone, weatherData, errorMessage } = state;
+  const {
+    searchDone,
+    weatherData,
+    errorMessage
+  } = state;
 
-  return (
-    <div className="App">
-      <SearchBar callBackFromParent={callWeatherData} error={errorMessage} />
-      {searchDone && <WeatherCard weatherData={weatherData} />}
-    </div>
-  );
-}
+  return ( <
+    div className = "App" >
+    <
+    SearchBar callBackFromParent = {
+      callWeatherData
+    }
+    error = {
+      errorMessage
+    }
+    /> {
+      searchDone && < WeatherCard weatherData = {
+        weatherData
+      }
+      />} <
+      /div>
+    );
+  }
 
-export default App;
+  export default App;
