@@ -1,0 +1,41 @@
+.SearchBar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 3rem 0 2rem;
+}
+
+.SearchBar-form {
+  display: flex;
+  align-items: center;
+}
+
+.SearchBar-input {
+  width: 25rem;
+  padding: 1rem;
+}
+
+.SearchBar-button {
+  border: none;
+  background-color: blue;
+  color: white;
+  padding: 1rem;
+}
+
+.SearchBar-icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+
+.SearchBar .message {
+  width: 20rem;
+  margin: 0 auto 2rem;
+  animation: fadeInDown 1s;
+}
+
+@media screen and (max-width: 600px) {
+  .SearchBar-input {
+    width: 20rem;
+  }
+}
